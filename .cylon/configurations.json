@@ -1,0 +1,44 @@
+{
+    "SCRIPTS": {
+        "SETUP": "setup.pyx",
+        "BUILD": ".cylon/build.ps1",
+        "TEST": ".cylon/test.ps1",
+        "COMPRESSION": ".cylon/compression.ps1",
+        "COMPRESSION_HANDLER": ".cylon/handlers/tar-compression.pyx",
+        "RELEASE": ".cylon/release.ps1",
+        "DEPLOY": ".cylon/deploy-console.ps1",
+        "DEPLOY_CONSOLE": ".cylon/deploy-console.ps1",
+        "DEPLOY_GUI": ".cylon/deploy-gui.ps1",
+        "DEPLOYMENT_FIX": ".cylon/deployment-fix.ps1",
+        "PACKAGE_SIZES": ".cylon/package-sizes.ps1",
+        "PACKAGE_SIZES_HANDLER": ".cylon/handlers/package-sizes.pyx"
+    },
+    "DEPLOYMENT": {
+        "VERSION": "1.0.1",
+        "DESCRIPTION": "A Testing Deployment From A Custom Cython Development Environment",
+        "OUTPUT_NAME": "project",
+        "EXECUTABLE_NAME": "project",
+        "ICON_FILE_PATH": "public/icon.ico",
+        "TOOL_NAME": "nuitka",
+        "PLATFORM_NAME": "console",
+        "OPENING_FILE_NAME": "app",
+        "SOURCE_FOLDER_PATH": "sources",
+        "OUTPUT_FOLDER_PATH": ".releases",
+        "REPORT_OUTPUT_PATH": ".logs/compilation-report.xml",
+        "EXCLUDED_IMPORTS": "setuptools,pkg_resources,libcrypto"
+    },
+    "BUILD": {
+        "OUTPUT_FOLDER_PATH": ".build"
+    },
+    "TEST": {
+        "INPUT_FOLDER_PATH": "tests",
+        "BENCHMARKING_RESULTS_NAME": "tests",
+        "IS_BENCHMARKING_RESULT_SAVED": true
+    },
+    "COMPRESSION": {
+        "EXTENSION_NAME": "tar.xz"
+    },
+    "CYLON": {
+        "ROOT_FOLDER_PATH": ".cylon"
+    }
+}

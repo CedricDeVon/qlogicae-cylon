@@ -38,7 +38,7 @@ def find_binding_files(
     )]
 
 
-def find_source_files(
+def find_project_source_files(
         base_target_source_folder='sources'):
 
     extensions = []
@@ -59,8 +59,33 @@ def find_source_files(
     return extensions
 
 
+def find_cylo_source_files(
+        root_target_source_folder='.cylo',
+        base_target_source_folder='sources',
+        a='cylo'):
+
+    extensions = []
+    for root, _, files in os.walk(f'{root_target_source_folder}/{base_target_source_folder}'):
+        for file in files:
+            if file.endswith('.pyx'):
+                full_path = os.path.join(root, file)
+                module_path = os.path.splitext(
+                    os.path.relpath(full_path, f'{root_target_source_folder}/{base_target_source_folder}')
+                )[0]
+                print(full_path)
+                print(module_path)
+                extensions.append(Extension(
+                    f'{root_target_source_folder}.{base_target_source_folder}.{module_path}',
+                    sources=[full_path],
+                    extra_compile_args=extra_compile_args_set_1,
+                    extra_link_args=extra_link_args_1
+                ))
+                
+    return extensions
+
+
 def main():
-    file_paths = find_binding_files('c') + find_binding_files('cpp') + find_source_files()
+    file_paths = find_binding_files('c') + find_binding_files('cpp') + find_project_source_files() 
     
     setup(
         name='sandbox',

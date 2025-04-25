@@ -1,1 +1,0 @@
-python commands/inspect/pip.py $($args[0])
