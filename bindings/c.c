@@ -7,6 +7,19 @@
             "bindings\\c\\includes\\add.h",
             "bindings\\c\\includes\\square.h"
         ],
+        "extra_compile_args": [
+            "/O2",
+            "/GL",
+            "/arch:AVX2",
+            "/fp:fast",
+            "/favor:fast",
+            "/openmp",
+            "/Oi",
+            "/Gy"
+        ],
+        "extra_link_args": [
+            "/LTCG"
+        ],
         "include_dirs": [
             "bindings"
         ],

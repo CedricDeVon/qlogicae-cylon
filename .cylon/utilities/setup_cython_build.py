@@ -1,24 +1,19 @@
 import os
+import json
+from itertools import chain
 from Cython.Build import cythonize
 from setuptools import setup, Extension
 
+import globals
 
-extra_compile_args_set_1 = [
-    "/O2",             
-    "/GL",             
-    "/arch:AVX2",      
-    "/fp:fast",        
-    "/favor:fast",     
-    "/openmp",         
-    "/Oi",             
-    "/Gy",             
-]
 
-extra_link_args_1 = [
-    "/LTCG",  
-]
+binding_input_paths = globals.public_configurations['build']['binding_input_paths']
+binding_miscellaneous_input_paths = globals.public_configurations['build']['binding_miscellaneous_input_paths']
+extra_compile_args_set_1 = globals.public_configurations['build']['extra_compile_args_set_1']
+extra_link_args_1 = globals.public_configurations['build']['extra_link_args_1']
 
-def find_binding_files(
+
+def __find_binding_files(
         binding_target_folder,
         binding_root_folder='bindings',
         binding_target_source_folder='sources'):
@@ -38,7 +33,7 @@ def find_binding_files(
     )]
 
 
-def find_project_source_files(
+def __find_project_source_files(
         base_target_source_folder='sources'):
 
     extensions = []
@@ -55,42 +50,39 @@ def find_project_source_files(
                     extra_compile_args=extra_compile_args_set_1,
                     extra_link_args=extra_link_args_1
                 ))
-                
+    
     return extensions
 
 
-def find_cylo_source_files(
-        root_target_source_folder='.cylo',
-        base_target_source_folder='sources',
-        a='cylo'):
+def __find_miscellaneous_source_file(
+        binding_target_file,
+        binding_root_folder='bindings',
+        binding_target_source_folder='sources'):
 
-    extensions = []
-    for root, _, files in os.walk(f'{root_target_source_folder}/{base_target_source_folder}'):
-        for file in files:
-            if file.endswith('.pyx'):
-                full_path = os.path.join(root, file)
-                module_path = os.path.splitext(
-                    os.path.relpath(full_path, f'{root_target_source_folder}/{base_target_source_folder}')
-                )[0]
-                print(full_path)
-                print(module_path)
-                extensions.append(Extension(
-                    f'{root_target_source_folder}.{base_target_source_folder}.{module_path}',
-                    sources=[full_path],
-                    extra_compile_args=extra_compile_args_set_1,
-                    extra_link_args=extra_link_args_1
-                ))
-                
-    return extensions
+    source_files = [f'{binding_root_folder}\{binding_target_file}.pyx']
+
+    return [Extension(
+        f'{binding_root_folder}.{binding_target_file}',
+        sources=source_files,
+        extra_compile_args=extra_compile_args_set_1,
+        extra_link_args=extra_link_args_1
+    )]
 
 
 def main():
-    file_paths = find_binding_files('c') + find_binding_files('cpp') + find_project_source_files() 
+    extension_paths = []
+    for binding_input_path in binding_input_paths:
+        extension_paths = list(chain(extension_paths, __find_binding_files(binding_input_path)))
+
+    for binding_miscellaneous_input_path in binding_miscellaneous_input_paths:
+        extension_paths = list(chain(extension_paths, __find_miscellaneous_source_file(binding_miscellaneous_input_path)))
+
+    extension_paths = list(chain(extension_paths, __find_project_source_files()))
     
     setup(
         name='sandbox',
         ext_modules=cythonize(
-            file_paths,
+            extension_paths,
             compiler_directives={
                 "language_level": "3",      
                 "boundscheck": False,       

@@ -175,3 +175,12 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# Installations
+*.ifp
+configurations/private/*
+build
+
+legacy/
+
+.cylon/configurations/private.json

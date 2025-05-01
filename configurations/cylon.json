@@ -1,0 +1,14 @@
+{
+    "application": {
+        "name": "Project",
+        "version": "1.0.1",
+        "description": "A Testing Deployment From A Custom Cython Development Environment",
+        "company": "Company",
+        "url": "https://google.com"
+    },
+    "environment": {
+        "selected_key": "SelectedEnvironment",
+        "base_data_sub_key": "Data",
+        "base_key": "Software"
+    }
+}

@@ -1,7 +1,8 @@
 $public_configurations = Get-Content .cylon/configurations/public.json -Raw | ConvertFrom-Json
 
 
-& powershell -NoProfile -ExecutionPolicy Bypass -File "$($public_configurations.cylon.path)/$($args[0]).ps1" $args
+python $public_configurations.scripts.setup_secrets_utilities --selectedEnvironment=$($args[1])
 if ($LASTEXITCODE) {
+    Pause
     exit $LASTEXITCODE
 }
