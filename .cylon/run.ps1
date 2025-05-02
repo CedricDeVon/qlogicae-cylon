@@ -2,12 +2,13 @@ $public_configurations = Get-Content .cylon/configurations/public.json -Raw | Co
 . "$($public_configurations.scripts.import_utilities)"
 
 
-Write-Host "- Configurations Setup Pipeline Begins" -ForegroundColor Green
+& powershell -NoProfile -ExecutionPolicy Bypass -File $public_configurations.scripts.build selection development
+if ($LASTEXITCODE) {
+    exit $LASTEXITCODE
+}
 
-python $public_configurations.scripts.setup_configurations_utilities --selectedEnvironment=$($args[1]) 
+python "$($public_configurations.compilation.entry_path).pyx"
 if ($LASTEXITCODE) {
     Write-Host "- Configurations Setup Pipeline Phase 1 Failed" -ForegroundColor Red
     exit $LASTEXITCODE
 }
-
-Write-Host "- Configurations Setup Pipeline Complete" -ForegroundColor Green

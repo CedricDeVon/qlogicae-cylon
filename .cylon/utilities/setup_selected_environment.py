@@ -8,10 +8,13 @@ def main():
         parser = argparse.ArgumentParser()
         parser.add_argument("--selection", required=True, default=globals.public_configurations['build']['default_environment'])
         arguments = parser.parse_args()
+        selected_environment = arguments.selection if (arguments.selection) else globals.environment_types[0]
+        if selected_environment not in globals.environment_types:
+            raise Exception(f"'{selected_environment}' is not a valid environment type")
+            return
 
-        sub_key_selected_environment_path = f"{globals.public_configurations['environment']['base_key']}\{globals.public_configurations['application']['company']}\{globals.public_configurations['application']['name']}\{globals.public_configurations['application']['version']}"
-        key = winreg.CreateKeyEx(globals.root_keys['hkcu']['value'], sub_key_selected_environment_path, 0, winreg.KEY_SET_VALUE)
-        winreg.SetValueEx(key, globals.public_configurations['environment']['selected_key'], 0, winreg.REG_SZ, arguments.selection or globals.public_configurations['build']['default_environment'])
+        key = winreg.CreateKeyEx(globals.root_keys['hkcu']['value'], globals.base_sub_key_path, 0, winreg.KEY_SET_VALUE)
+        winreg.SetValueEx(key, globals.application_configurations['selected_key'], 0, winreg.REG_SZ, arguments.selection or globals.public_configurations['build']['default_environment'])
         
         winreg.CloseKey(key)
         

@@ -1,17 +1,27 @@
 {
-    "application": {
-        "name": "Project",
-        "version": "1.0.1",
-        "description": "A Testing Deployment From A Custom Cython Development Environment",
-        "company": "Company",
-        "url": "https://google.com",
-        "icon_path": "assets/icon.ico",
-        "license_path": "LICENSE.txt"
-    },
-    "environment": {
-        "selected_key": "SelectedEnvironment",
-        "base_data_sub_key": "Data",
-        "base_key": "Software"
+    "applications": {
+        "default": {
+            "name": "Project",
+            "version": "1.0.1",
+            "description": "A Testing Deployment From A Custom Cython Development Environment",
+            "company": "Company",
+            "url": "https://google.com",
+            "icon_path": "assets/icon.ico",
+            "license_path": "LICENSE.txt",
+            "selected_environment": "development",
+            "selected_key": "SelectedEnvironment",
+            "root_sub_key": "Software",
+            "sub_data_key": "Data"
+        },
+        "development": {
+            "selected_environment": "development"
+        },
+        "testing": {
+            "selected_environment": "testing"
+        },
+        "release": {
+            "selected_environment": "release"
+        }
     },
     "testing": {
         "input_path": "tests",
@@ -41,7 +51,7 @@
         "default_environment": "development",
         "environment_selections": ["development", "testing", "release"],
         "configuration_output_folder_path": "configurations",
-        "configuration_output_file_path": "cylon.json",
+        "configuration_output_file_path": "application.json",
         "configuration_sections": ["application", "environment"]
     },
     "compilation": {
@@ -68,6 +78,15 @@
     "cylon": {
         "path": ".cylon"
     },
+    "logs": {
+        "is_enabled": {
+            "all": 1,
+            "console": 1,
+            "file": 0
+        },
+        "timestamp_format": "yyyy-MM-dd HH:mm:ss",
+        "log_path": ".logs/cylon.log"
+    },
     "scripts": {
         "setup_cython_build": ".cylon/utilities/setup_cython_build.py",
         "setup_cython_bindings": ".cylon/setup_cython_bindings.ps1",
@@ -93,7 +112,8 @@
         "setup_selected_environment": ".cylon/setup_selected_environment.ps1",
         "setup_selected_environment_utilities": ".cylon/utilities/setup_selected_environment.py",
         "setup_installment": ".cylon/setup_installment.ps1",
+        "logger_utilities": ".cylon/utilities/logger.ps1",
+        "import_utilities": ".cylon/utilities/imports.ps1",
         "iscc": "C:/Program Files (x86)/Inno Setup 6/ISCC.exe"
-
     }  
 }

@@ -1,4 +1,6 @@
 $public_configurations = Get-Content .cylon/configurations/public.json -Raw | ConvertFrom-Json
+$application_configurations = Get-Content .cylon/configurations/application.json -Raw | ConvertFrom-Json
+. "$($public_configurations.scripts.import_utilities)"
 
 
 Write-Host "- Compilation Pipeline Begins" -ForegroundColor Green
@@ -14,14 +16,14 @@ if ($args[1] -match "console") {
         --nofollow-import-to="$($public_configurations.compilation.excluded_imports -join ',')" `
         --noinclude-pytest-mode=nofollow `
         --nofollow-import-to=tkinter `
-        --output-dir="$($public_configurations.compilation.output_path)/$($public_configurations.application.name)" `
+        --output-dir="$($public_configurations.compilation.output_path)/$($application_configurations.name)" `
         @($public_configurations.compilation.input_paths | ForEach-Object { "--include-data-dir=$_=$_" }) `
         @($public_configurations.compilation.input_file_paths | ForEach-Object { "--include-data-files=$_=$_" }) `
         --include-package="$($public_configurations.compilation.include_packages -join ',')" `
-        --product-name="$($public_configurations.application.name)" `
-        --file-version="$($public_configurations.application.version)" `
-        --file-description="$($public_configurations.application.description)" `
-        --windows-icon-from-ico="$($public_configurations.application.icon_path)" `
+        --product-name="$($application_configurations.name)" `
+        --file-version="$($application_configurations.version)" `
+        --file-description="$($application_configurations.description)" `
+        --windows-icon-from-ico="$($application_configurations.icon_path)" `
         --windows-console-mode=force `
         $(if ($public_configurations.compilation.request_for_windows_uac_admin_permissions) { "--windows-uac-admin" } else { "" }) `
         --report="$($public_configurations.compilation.compilation_report_path)"
@@ -37,14 +39,14 @@ if ($args[1] -match "console") {
         --nofollow-import-to="$($public_configurations.compilation.excluded_imports -join ',')" `
         --noinclude-pytest-mode=nofollow `
         --nofollow-import-to=tkinter `
-        --output-dir="$($public_configurations.compilation.output_path)/$($public_configurations.application.name)" `
+        --output-dir="$($public_configurations.compilation.output_path)/$($application_configurations.name)" `
         @($public_configurations.compilation.input_paths | ForEach-Object { "--include-data-dir=$_=$_" }) `
         @($public_configurations.compilation.input_file_paths | ForEach-Object { "--include-data-files=$_=$_" }) `
         --include-package="$($public_configurations.compilation.include_packages -join ',')" `
-        --product-name="$($public_configurations.application.name)" `
-        --file-version="$($public_configurations.application.version)" `
-        --file-description="$($public_configurations.application.description)" `
-        --windows-icon-from-ico="$($public_configurations.application.icon_path)" `
+        --product-name="$($application_configurations.name)" `
+        --file-version="$($application_configurations.version)" `
+        --file-description="$($application_configurations.description)" `
+        --windows-icon-from-ico="$($application_configurations.icon_path)" `
         --windows-console-mode=disable `
         $(if ($public_configurations.compilation.request_for_windows_uac_admin_permissions) { "--windows-uac-admin" } else { "" }) `
         --report="$($public_configurations.compilation.compilation_report_path)"

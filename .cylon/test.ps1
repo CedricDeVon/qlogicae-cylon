@@ -1,7 +1,8 @@
 $public_configurations = Get-Content .cylon/configurations/public.json -Raw | ConvertFrom-Json
+. "$($public_configurations.scripts.import_utilities)"
 
 
-& powershell -NoProfile -ExecutionPolicy Bypass -File $public_configurations.scripts.setup_selected_environment default testing
+& powershell -NoProfile -ExecutionPolicy Bypass -File $public_configurations.scripts.build selection testing
 if ($LASTEXITCODE) {
     exit $LASTEXITCODE
 }
@@ -15,12 +16,12 @@ if ($public_configurations.testing.is_benchmarking_saved) {
     pytest $public_configurations.testing.input_path
 }
 if ($LASTEXITCODE) {
-    Write-Host "    - Test Pipeline Phase 1 Failed" -ForegroundColor Red
+    Write-Host "- Test Pipeline Phase 1 Failed" -ForegroundColor Red
     exit $LASTEXITCODE
 }
 
 
-& powershell -NoProfile -ExecutionPolicy Bypass -File $public_configurations.scripts.setup_selected_environment default development
+& powershell -NoProfile -ExecutionPolicy Bypass -File $public_configurations.scripts.setup_configurations selection development
 if ($LASTEXITCODE) {
     exit $LASTEXITCODE
 }

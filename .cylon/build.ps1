@@ -1,9 +1,10 @@
 $public_configurations = Get-Content .cylon/configurations/public.json -Raw | ConvertFrom-Json
+. "$($public_configurations.scripts.import_utilities)"
 
 
 Write-Host "- Build Pipeline Begins" -ForegroundColor Green
 
-& powershell -NoProfile -ExecutionPolicy Bypass -File $public_configurations.scripts.setup_configurations
+& powershell -NoProfile -ExecutionPolicy Bypass -File $public_configurations.scripts.setup_configurations selection $($args[1])
 if ($LASTEXITCODE) {
     Write-Host "- Build Pipeline Phase 1 Failed" -ForegroundColor Red
     exit $LASTEXITCODE
@@ -15,13 +16,7 @@ if ($LASTEXITCODE) {
     exit $LASTEXITCODE
 }
 
-& powershell -NoProfile -ExecutionPolicy Bypass -File $public_configurations.scripts.setup_selected_environment default $($args[1])
-if ($LASTEXITCODE) {
-    Write-Host "- Build Pipeline Phase 3 Failed" -ForegroundColor Red
-    exit $LASTEXITCODE
-}
-
-& powershell -NoProfile -ExecutionPolicy Bypass -File $public_configurations.scripts.setup_secrets default $($args[1])
+& powershell -NoProfile -ExecutionPolicy Bypass -File $public_configurations.scripts.setup_secrets selection $($args[1])
 if ($LASTEXITCODE) {
     Write-Host "- Build Pipeline Phase 4 Failed" -ForegroundColor Red
     exit $LASTEXITCODE

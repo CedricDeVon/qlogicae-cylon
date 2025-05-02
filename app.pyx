@@ -7,22 +7,18 @@ import json
 import winreg
 
 
-public_configurations = {}
-with open('configurations/cylon.json', 'r') as file:
-    public_configurations = json.load(file)
+application_configurations = {}
+with open('configurations/application.json', 'r') as file:
+    application_configurations = json.load(file)
 
 
 def read_registry(root_key):
+    base_sub_key_path = f"{application_configurations['root_sub_key']}\{application_configurations['company']}\{application_configurations['name']}\{application_configurations['version']}\{application_configurations['selected_environment']}"
     try:
-        with winreg.OpenKey(root_key, f"{public_configurations['environment']['base_key']}\{public_configurations['application']['company']}\{public_configurations['application']['name']}\{public_configurations['application']['version']}") as key:
-            val_a, _ = winreg.QueryValueEx(key, public_configurations['environment']['selected_key'])
+        with winreg.OpenKey(root_key, base_sub_key_path) as key:
+            val_a, _ = winreg.QueryValueEx(key, application_configurations['sub_data_key'])
 
-        print(val_a)
-            
-        with winreg.OpenKey(root_key, f"{public_configurations['environment']['base_key']}\{public_configurations['application']['company']}\{public_configurations['application']['name']}\{public_configurations['application']['version']}\{val_a}") as key:
-            val_b, _ = winreg.QueryValueEx(key, public_configurations['environment']['base_data_sub_key'])
-            
-        return val_b
+        return val_a
 
     except FileNotFoundError:
         return None
@@ -32,11 +28,8 @@ def main():
     confirmation_1('First')
     confirmation_2('Second')
     
-    print("From Configurations:", public_configurations)
+    print("From Configurations:", application_configurations)
     print("From HKEY_CURRENT_USER:", read_registry(winreg.HKEY_CURRENT_USER))
-    print("From HKEY_LOCAL_MACHINE:", read_registry(winreg.HKEY_LOCAL_MACHINE))
-    print("From HKEY_CLASSES_ROOT:", read_registry(winreg.HKEY_CLASSES_ROOT))
-    print("From HKEY_CURRENT_CONFIG:", read_registry(winreg.HKEY_CURRENT_CONFIG))
     
     v = input()
     

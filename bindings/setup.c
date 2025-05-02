@@ -2076,31 +2076,31 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * import bindings
  * import bindings.c             # <<<<<<<<<<<<<<
  * 
- * import sources.confirmation_1
+ * import sources
  */
   __pyx_tuple__3 = PyTuple_Pack(2, __pyx_n_s_bindings, __pyx_n_s_c); if (unlikely(!__pyx_tuple__3)) __PYX_ERR(0, 3, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__3);
   __Pyx_GIVEREF(__pyx_tuple__3);
 
-  /* "bindings/setup.pyx":5
- * import bindings.c
+  /* "bindings/setup.pyx":6
  * 
- * import sources.confirmation_1             # <<<<<<<<<<<<<<
  * import sources
- * import sources.utils.confirmation_2
+ * import sources.utils.confirmation_2             # <<<<<<<<<<<<<<
+ * import sources.confirmation_1
+ * 
  */
-  __pyx_tuple__4 = PyTuple_Pack(2, __pyx_n_s_sources, __pyx_n_s_confirmation_1); if (unlikely(!__pyx_tuple__4)) __PYX_ERR(0, 5, __pyx_L1_error)
+  __pyx_tuple__4 = PyTuple_Pack(3, __pyx_n_s_sources, __pyx_n_s_utils, __pyx_n_s_confirmation_2); if (unlikely(!__pyx_tuple__4)) __PYX_ERR(0, 6, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__4);
   __Pyx_GIVEREF(__pyx_tuple__4);
 
   /* "bindings/setup.pyx":7
- * import sources.confirmation_1
  * import sources
- * import sources.utils.confirmation_2             # <<<<<<<<<<<<<<
+ * import sources.utils.confirmation_2
+ * import sources.confirmation_1             # <<<<<<<<<<<<<<
  * 
  * 
  */
-  __pyx_tuple__5 = PyTuple_Pack(3, __pyx_n_s_sources, __pyx_n_s_utils, __pyx_n_s_confirmation_2); if (unlikely(!__pyx_tuple__5)) __PYX_ERR(0, 7, __pyx_L1_error)
+  __pyx_tuple__5 = PyTuple_Pack(2, __pyx_n_s_sources, __pyx_n_s_confirmation_1); if (unlikely(!__pyx_tuple__5)) __PYX_ERR(0, 7, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__5);
   __Pyx_GIVEREF(__pyx_tuple__5);
   __Pyx_RefNannyFinishContext();
@@ -2492,7 +2492,7 @@ if (!__Pyx_RefNanny) {
  * import bindings
  * import bindings.c             # <<<<<<<<<<<<<<
  * 
- * import sources.confirmation_1
+ * import sources
  */
   __pyx_t_2 = __Pyx_Import(__pyx_n_s_bindings_c, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 3, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -2502,35 +2502,35 @@ if (!__Pyx_RefNanny) {
   /* "bindings/setup.pyx":5
  * import bindings.c
  * 
- * import sources.confirmation_1             # <<<<<<<<<<<<<<
- * import sources
+ * import sources             # <<<<<<<<<<<<<<
  * import sources.utils.confirmation_2
+ * import sources.confirmation_1
  */
-  __pyx_t_2 = __Pyx_Import(__pyx_n_s_sources_confirmation_1, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 5, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_ImportDottedModule(__pyx_n_s_sources, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 5, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_sources, __pyx_t_2) < 0) __PYX_ERR(0, 5, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "bindings/setup.pyx":6
  * 
+ * import sources
+ * import sources.utils.confirmation_2             # <<<<<<<<<<<<<<
  * import sources.confirmation_1
- * import sources             # <<<<<<<<<<<<<<
- * import sources.utils.confirmation_2
  * 
  */
-  __pyx_t_2 = __Pyx_ImportDottedModule(__pyx_n_s_sources, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 6, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_Import(__pyx_n_s_sources_utils_confirmation_2, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 6, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_sources, __pyx_t_2) < 0) __PYX_ERR(0, 6, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "bindings/setup.pyx":7
- * import sources.confirmation_1
  * import sources
- * import sources.utils.confirmation_2             # <<<<<<<<<<<<<<
+ * import sources.utils.confirmation_2
+ * import sources.confirmation_1             # <<<<<<<<<<<<<<
  * 
  * 
  */
-  __pyx_t_2 = __Pyx_Import(__pyx_n_s_sources_utils_confirmation_2, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 7, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_Import(__pyx_n_s_sources_confirmation_1, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 7, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_sources, __pyx_t_2) < 0) __PYX_ERR(0, 7, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;

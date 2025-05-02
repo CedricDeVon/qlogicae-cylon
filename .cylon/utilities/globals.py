@@ -21,7 +21,7 @@ root_keys = {
     'hkcc': {
         'name': 'HKEY_CURRENT_CONFIG',
         'value': winreg.HKEY_CURRENT_CONFIG
-    }
+    },
 }
 
 private_configurations = {}
@@ -31,6 +31,10 @@ with open('.cylon/configurations/private.json', 'r') as file:
 public_configurations = {}
 with open('.cylon/configurations/public.json', 'r') as file:
     public_configurations = json.load(file)
+
+application_configurations = {}
+with open('.cylon/configurations/application.json', 'r') as file:
+    application_configurations = json.load(file)
 
 environment_types = public_configurations['build']['environment_selections']
 
@@ -48,6 +52,4 @@ def handle_rebooting_if_without_admin_access():
             )
         sys.exit()
 
-sub_key_base_path = f"{public_configurations['environment']['base_key']}\{public_configurations['application']['company']}\{public_configurations['application']['name']}\{public_configurations['application']['version']}"
-
-
+base_sub_key_path = f"{application_configurations['root_sub_key']}\{application_configurations['company']}\{application_configurations['name']}\{application_configurations['version']}"

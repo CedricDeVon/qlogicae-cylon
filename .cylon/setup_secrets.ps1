@@ -1,4 +1,5 @@
 $public_configurations = Get-Content .cylon/configurations/public.json -Raw | ConvertFrom-Json
+. "$($public_configurations.scripts.import_utilities)"
 
 
 Write-Host "- Secrets Setup Pipeline Begins" -ForegroundColor Green
