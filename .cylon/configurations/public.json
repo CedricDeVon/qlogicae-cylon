@@ -85,6 +85,7 @@
             "file": 0
         },
         "timestamp_format": "yyyy-MM-dd HH:mm:ss",
+        "root_folder": ".logs",
         "log_path": ".logs/cylon.log"
     },
     "scripts": {

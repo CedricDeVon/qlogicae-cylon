@@ -31,6 +31,7 @@ function Logger {
 
     try {
         if ($public_configurations.logs.is_enabled.all -or $public_configurations.logs.is_enabled.file) {
+            if (-not (Test-Path $public_configurations.logs.root_folder)) { New-Item -ItemType Directory -Path $public_configurations.logs.root_folder | Out-Null }
             Add-Content -Path $LogFile -Value $logEntry
         }
 
