@@ -16,7 +16,6 @@ if ($public_configurations.testing.is_benchmarking_saved) {
 }
 if ($LASTEXITCODE) {
     Write-Host "    - Test Pipeline Phase 1 Failed" -ForegroundColor Red
-    Pause
     exit $LASTEXITCODE
 }
 
@@ -25,7 +24,6 @@ if ($LASTEXITCODE) {
 if ($LASTEXITCODE) {
     exit $LASTEXITCODE
 }
-
 
 Write-Host "- Test Pipeline Complete" -ForegroundColor Green
 

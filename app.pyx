@@ -3,7 +3,6 @@ import bindings.setup
 from sources.confirmation_1 import confirmation_1
 from sources.utils.confirmation_2 import confirmation_2
 
-import os
 import json
 import winreg
 
@@ -27,7 +26,6 @@ def read_registry(root_key):
 
     except FileNotFoundError:
         return None
-
 
 
 def main():

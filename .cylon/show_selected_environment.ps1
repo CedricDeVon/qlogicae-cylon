@@ -3,6 +3,6 @@ $public_configurations = Get-Content .cylon/configurations/public.json -Raw | Co
 
 python $public_configurations.scripts.show_selected_environment_utilities
 if ($LASTEXITCODE) {
-    Pause
+    Write-Host "- Show Selected Environment Failed" -ForegroundColor Red
     exit $LASTEXITCODE
 }

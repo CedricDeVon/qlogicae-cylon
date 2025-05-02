@@ -3,8 +3,7 @@ $public_configurations = Get-Content .cylon/configurations/public.json -Raw | Co
 
 python $public_configurations.scripts.show_package_sizes_utilities --selections=$args
 if ($LASTEXITCODE) {
-    Write-Host "    - Inspect Packages Failed" -ForegroundColor Red
-    Pause
+    Write-Host "- Show Package Sizes Failed" -ForegroundColor Red
     exit $LASTEXITCODE
 }
 

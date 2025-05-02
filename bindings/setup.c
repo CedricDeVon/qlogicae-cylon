@@ -1775,16 +1775,13 @@ int __pyx_module_is_main_bindings__setup = 0;
 static const char __pyx_k_c[] = "c";
 static const char __pyx_k__2[] = "*";
 static const char __pyx_k__6[] = "?";
-static const char __pyx_k_os[] = "os";
 static const char __pyx_k_cpp[] = "cpp";
-static const char __pyx_k_json[] = "json";
 static const char __pyx_k_main[] = "__main__";
 static const char __pyx_k_name[] = "__name__";
 static const char __pyx_k_spec[] = "__spec__";
 static const char __pyx_k_test[] = "__test__";
 static const char __pyx_k_utils[] = "utils";
 static const char __pyx_k_import[] = "__import__";
-static const char __pyx_k_winreg[] = "winreg";
 static const char __pyx_k_sources[] = "sources";
 static const char __pyx_k_bindings[] = "bindings";
 static const char __pyx_k_bindings_c[] = "bindings.c";
@@ -1837,17 +1834,14 @@ typedef struct {
   PyObject *__pyx_n_s_cpp;
   PyObject *__pyx_n_s_import;
   PyObject *__pyx_n_s_initializing;
-  PyObject *__pyx_n_s_json;
   PyObject *__pyx_n_s_main;
   PyObject *__pyx_n_s_name;
-  PyObject *__pyx_n_s_os;
   PyObject *__pyx_n_s_sources;
   PyObject *__pyx_n_s_sources_confirmation_1;
   PyObject *__pyx_n_s_sources_utils_confirmation_2;
   PyObject *__pyx_n_s_spec;
   PyObject *__pyx_n_s_test;
   PyObject *__pyx_n_s_utils;
-  PyObject *__pyx_n_s_winreg;
   PyObject *__pyx_tuple_;
   PyObject *__pyx_tuple__3;
   PyObject *__pyx_tuple__4;
@@ -1906,17 +1900,14 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_n_s_cpp);
   Py_CLEAR(clear_module_state->__pyx_n_s_import);
   Py_CLEAR(clear_module_state->__pyx_n_s_initializing);
-  Py_CLEAR(clear_module_state->__pyx_n_s_json);
   Py_CLEAR(clear_module_state->__pyx_n_s_main);
   Py_CLEAR(clear_module_state->__pyx_n_s_name);
-  Py_CLEAR(clear_module_state->__pyx_n_s_os);
   Py_CLEAR(clear_module_state->__pyx_n_s_sources);
   Py_CLEAR(clear_module_state->__pyx_n_s_sources_confirmation_1);
   Py_CLEAR(clear_module_state->__pyx_n_s_sources_utils_confirmation_2);
   Py_CLEAR(clear_module_state->__pyx_n_s_spec);
   Py_CLEAR(clear_module_state->__pyx_n_s_test);
   Py_CLEAR(clear_module_state->__pyx_n_s_utils);
-  Py_CLEAR(clear_module_state->__pyx_n_s_winreg);
   Py_CLEAR(clear_module_state->__pyx_tuple_);
   Py_CLEAR(clear_module_state->__pyx_tuple__3);
   Py_CLEAR(clear_module_state->__pyx_tuple__4);
@@ -1953,17 +1944,14 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_n_s_cpp);
   Py_VISIT(traverse_module_state->__pyx_n_s_import);
   Py_VISIT(traverse_module_state->__pyx_n_s_initializing);
-  Py_VISIT(traverse_module_state->__pyx_n_s_json);
   Py_VISIT(traverse_module_state->__pyx_n_s_main);
   Py_VISIT(traverse_module_state->__pyx_n_s_name);
-  Py_VISIT(traverse_module_state->__pyx_n_s_os);
   Py_VISIT(traverse_module_state->__pyx_n_s_sources);
   Py_VISIT(traverse_module_state->__pyx_n_s_sources_confirmation_1);
   Py_VISIT(traverse_module_state->__pyx_n_s_sources_utils_confirmation_2);
   Py_VISIT(traverse_module_state->__pyx_n_s_spec);
   Py_VISIT(traverse_module_state->__pyx_n_s_test);
   Py_VISIT(traverse_module_state->__pyx_n_s_utils);
-  Py_VISIT(traverse_module_state->__pyx_n_s_winreg);
   Py_VISIT(traverse_module_state->__pyx_tuple_);
   Py_VISIT(traverse_module_state->__pyx_tuple__3);
   Py_VISIT(traverse_module_state->__pyx_tuple__4);
@@ -2010,17 +1998,14 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_n_s_cpp __pyx_mstate_global->__pyx_n_s_cpp
 #define __pyx_n_s_import __pyx_mstate_global->__pyx_n_s_import
 #define __pyx_n_s_initializing __pyx_mstate_global->__pyx_n_s_initializing
-#define __pyx_n_s_json __pyx_mstate_global->__pyx_n_s_json
 #define __pyx_n_s_main __pyx_mstate_global->__pyx_n_s_main
 #define __pyx_n_s_name __pyx_mstate_global->__pyx_n_s_name
-#define __pyx_n_s_os __pyx_mstate_global->__pyx_n_s_os
 #define __pyx_n_s_sources __pyx_mstate_global->__pyx_n_s_sources
 #define __pyx_n_s_sources_confirmation_1 __pyx_mstate_global->__pyx_n_s_sources_confirmation_1
 #define __pyx_n_s_sources_utils_confirmation_2 __pyx_mstate_global->__pyx_n_s_sources_utils_confirmation_2
 #define __pyx_n_s_spec __pyx_mstate_global->__pyx_n_s_spec
 #define __pyx_n_s_test __pyx_mstate_global->__pyx_n_s_test
 #define __pyx_n_s_utils __pyx_mstate_global->__pyx_n_s_utils
-#define __pyx_n_s_winreg __pyx_mstate_global->__pyx_n_s_winreg
 #define __pyx_tuple_ __pyx_mstate_global->__pyx_tuple_
 #define __pyx_tuple__3 __pyx_mstate_global->__pyx_tuple__3
 #define __pyx_tuple__4 __pyx_mstate_global->__pyx_tuple__4
@@ -2055,17 +2040,14 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_n_s_cpp, __pyx_k_cpp, sizeof(__pyx_k_cpp), 0, 0, 1, 1},
     {&__pyx_n_s_import, __pyx_k_import, sizeof(__pyx_k_import), 0, 0, 1, 1},
     {&__pyx_n_s_initializing, __pyx_k_initializing, sizeof(__pyx_k_initializing), 0, 0, 1, 1},
-    {&__pyx_n_s_json, __pyx_k_json, sizeof(__pyx_k_json), 0, 0, 1, 1},
     {&__pyx_n_s_main, __pyx_k_main, sizeof(__pyx_k_main), 0, 0, 1, 1},
     {&__pyx_n_s_name, __pyx_k_name, sizeof(__pyx_k_name), 0, 0, 1, 1},
-    {&__pyx_n_s_os, __pyx_k_os, sizeof(__pyx_k_os), 0, 0, 1, 1},
     {&__pyx_n_s_sources, __pyx_k_sources, sizeof(__pyx_k_sources), 0, 0, 1, 1},
     {&__pyx_n_s_sources_confirmation_1, __pyx_k_sources_confirmation_1, sizeof(__pyx_k_sources_confirmation_1), 0, 0, 1, 1},
     {&__pyx_n_s_sources_utils_confirmation_2, __pyx_k_sources_utils_confirmation_2, sizeof(__pyx_k_sources_utils_confirmation_2), 0, 0, 1, 1},
     {&__pyx_n_s_spec, __pyx_k_spec, sizeof(__pyx_k_spec), 0, 0, 1, 1},
     {&__pyx_n_s_test, __pyx_k_test, sizeof(__pyx_k_test), 0, 0, 1, 1},
     {&__pyx_n_s_utils, __pyx_k_utils, sizeof(__pyx_k_utils), 0, 0, 1, 1},
-    {&__pyx_n_s_winreg, __pyx_k_winreg, sizeof(__pyx_k_winreg), 0, 0, 1, 1},
     {0, 0, 0, 0, 0, 0, 0}
   };
   return __Pyx_InitStrings(__pyx_string_tab);
@@ -2081,44 +2063,44 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
   /* "bindings/setup.pyx":1
- * import bindings.c             # <<<<<<<<<<<<<<
+ * import bindings.cpp             # <<<<<<<<<<<<<<
  * import bindings
- * import bindings.cpp
+ * import bindings.c
  */
-  __pyx_tuple_ = PyTuple_Pack(2, __pyx_n_s_bindings, __pyx_n_s_c); if (unlikely(!__pyx_tuple_)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_tuple_ = PyTuple_Pack(2, __pyx_n_s_bindings, __pyx_n_s_cpp); if (unlikely(!__pyx_tuple_)) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple_);
   __Pyx_GIVEREF(__pyx_tuple_);
 
   /* "bindings/setup.pyx":3
- * import bindings.c
+ * import bindings.cpp
  * import bindings
- * import bindings.cpp             # <<<<<<<<<<<<<<
+ * import bindings.c             # <<<<<<<<<<<<<<
  * 
- * import sources
+ * import sources.confirmation_1
  */
-  __pyx_tuple__3 = PyTuple_Pack(2, __pyx_n_s_bindings, __pyx_n_s_cpp); if (unlikely(!__pyx_tuple__3)) __PYX_ERR(0, 3, __pyx_L1_error)
+  __pyx_tuple__3 = PyTuple_Pack(2, __pyx_n_s_bindings, __pyx_n_s_c); if (unlikely(!__pyx_tuple__3)) __PYX_ERR(0, 3, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__3);
   __Pyx_GIVEREF(__pyx_tuple__3);
 
-  /* "bindings/setup.pyx":6
+  /* "bindings/setup.pyx":5
+ * import bindings.c
  * 
+ * import sources.confirmation_1             # <<<<<<<<<<<<<<
  * import sources
- * import sources.utils.confirmation_2             # <<<<<<<<<<<<<<
- * import sources.confirmation_1
- * 
+ * import sources.utils.confirmation_2
  */
-  __pyx_tuple__4 = PyTuple_Pack(3, __pyx_n_s_sources, __pyx_n_s_utils, __pyx_n_s_confirmation_2); if (unlikely(!__pyx_tuple__4)) __PYX_ERR(0, 6, __pyx_L1_error)
+  __pyx_tuple__4 = PyTuple_Pack(2, __pyx_n_s_sources, __pyx_n_s_confirmation_1); if (unlikely(!__pyx_tuple__4)) __PYX_ERR(0, 5, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__4);
   __Pyx_GIVEREF(__pyx_tuple__4);
 
   /* "bindings/setup.pyx":7
+ * import sources.confirmation_1
  * import sources
- * import sources.utils.confirmation_2
- * import sources.confirmation_1             # <<<<<<<<<<<<<<
+ * import sources.utils.confirmation_2             # <<<<<<<<<<<<<<
  * 
- * import os
+ * 
  */
-  __pyx_tuple__5 = PyTuple_Pack(2, __pyx_n_s_sources, __pyx_n_s_confirmation_1); if (unlikely(!__pyx_tuple__5)) __PYX_ERR(0, 7, __pyx_L1_error)
+  __pyx_tuple__5 = PyTuple_Pack(3, __pyx_n_s_sources, __pyx_n_s_utils, __pyx_n_s_confirmation_2); if (unlikely(!__pyx_tuple__5)) __PYX_ERR(0, 7, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__5);
   __Pyx_GIVEREF(__pyx_tuple__5);
   __Pyx_RefNannyFinishContext();
@@ -2485,19 +2467,19 @@ if (!__Pyx_RefNanny) {
   #endif
 
   /* "bindings/setup.pyx":1
- * import bindings.c             # <<<<<<<<<<<<<<
+ * import bindings.cpp             # <<<<<<<<<<<<<<
  * import bindings
- * import bindings.cpp
+ * import bindings.c
  */
-  __pyx_t_2 = __Pyx_Import(__pyx_n_s_bindings_c, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_Import(__pyx_n_s_bindings_cpp, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_bindings, __pyx_t_2) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "bindings/setup.pyx":2
- * import bindings.c
- * import bindings             # <<<<<<<<<<<<<<
  * import bindings.cpp
+ * import bindings             # <<<<<<<<<<<<<<
+ * import bindings.c
  * 
  */
   __pyx_t_2 = __Pyx_ImportDottedModule(__pyx_n_s_bindings, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2, __pyx_L1_error)
@@ -2506,92 +2488,57 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "bindings/setup.pyx":3
- * import bindings.c
+ * import bindings.cpp
  * import bindings
- * import bindings.cpp             # <<<<<<<<<<<<<<
+ * import bindings.c             # <<<<<<<<<<<<<<
  * 
- * import sources
+ * import sources.confirmation_1
  */
-  __pyx_t_2 = __Pyx_Import(__pyx_n_s_bindings_cpp, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 3, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_Import(__pyx_n_s_bindings_c, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 3, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_bindings, __pyx_t_2) < 0) __PYX_ERR(0, 3, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "bindings/setup.pyx":5
- * import bindings.cpp
+ * import bindings.c
  * 
- * import sources             # <<<<<<<<<<<<<<
+ * import sources.confirmation_1             # <<<<<<<<<<<<<<
+ * import sources
  * import sources.utils.confirmation_2
- * import sources.confirmation_1
  */
-  __pyx_t_2 = __Pyx_ImportDottedModule(__pyx_n_s_sources, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 5, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_Import(__pyx_n_s_sources_confirmation_1, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 5, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_sources, __pyx_t_2) < 0) __PYX_ERR(0, 5, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "bindings/setup.pyx":6
  * 
- * import sources
- * import sources.utils.confirmation_2             # <<<<<<<<<<<<<<
  * import sources.confirmation_1
+ * import sources             # <<<<<<<<<<<<<<
+ * import sources.utils.confirmation_2
  * 
  */
-  __pyx_t_2 = __Pyx_Import(__pyx_n_s_sources_utils_confirmation_2, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 6, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_ImportDottedModule(__pyx_n_s_sources, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 6, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_sources, __pyx_t_2) < 0) __PYX_ERR(0, 6, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "bindings/setup.pyx":7
+ * import sources.confirmation_1
  * import sources
- * import sources.utils.confirmation_2
- * import sources.confirmation_1             # <<<<<<<<<<<<<<
+ * import sources.utils.confirmation_2             # <<<<<<<<<<<<<<
  * 
- * import os
+ * 
  */
-  __pyx_t_2 = __Pyx_Import(__pyx_n_s_sources_confirmation_1, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 7, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_Import(__pyx_n_s_sources_utils_confirmation_2, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 7, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_sources, __pyx_t_2) < 0) __PYX_ERR(0, 7, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "bindings/setup.pyx":9
- * import sources.confirmation_1
- * 
- * import os             # <<<<<<<<<<<<<<
- * import winreg
- * import json
- */
-  __pyx_t_2 = __Pyx_ImportDottedModule(__pyx_n_s_os, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 9, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_os, __pyx_t_2) < 0) __PYX_ERR(0, 9, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-
-  /* "bindings/setup.pyx":10
- * 
- * import os
- * import winreg             # <<<<<<<<<<<<<<
- * import json
- * 
- */
-  __pyx_t_2 = __Pyx_ImportDottedModule(__pyx_n_s_winreg, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 10, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_winreg, __pyx_t_2) < 0) __PYX_ERR(0, 10, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-
-  /* "bindings/setup.pyx":11
- * import os
- * import winreg
- * import json             # <<<<<<<<<<<<<<
- * 
- */
-  __pyx_t_2 = __Pyx_ImportDottedModule(__pyx_n_s_json, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 11, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_json, __pyx_t_2) < 0) __PYX_ERR(0, 11, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-
   /* "bindings/setup.pyx":1
- * import bindings.c             # <<<<<<<<<<<<<<
+ * import bindings.cpp             # <<<<<<<<<<<<<<
  * import bindings
- * import bindings.cpp
+ * import bindings.c
  */
   __pyx_t_2 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);

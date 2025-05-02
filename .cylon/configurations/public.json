@@ -1,32 +1,17 @@
 {
-    "scripts": {
-        "setup_cython_build": ".cylon/utilities/setup_cython_build.py",
-        "setup_cython_bindings": ".cylon/setup_cython_bindings.ps1",
-        "setup_cython_bindings_utility": ".cylon/utilities/setup_cython_bindings.py",
-        "build": ".cylon/build.ps1",
-        "test": ".cylon/test.ps1",
-        "show_package_sizes": ".cylon/show_package_sizes.ps1",
-        "show_package_sizes_utilities": ".cylon/utilities/show_package_sizes.py",
-        "show_secrets": ".cylon/show_secrets.ps1",
-        "show_secrets_utilities": ".cylon/utilities/show_secrets.py",
-        "show_selected_environment": ".cylon/show_selected_environment.ps1",
-        "show_selected_environment_utilities": ".cylon/utilities/show_selected_environment.py",
-        "setup_secrets": ".cylon/setup_secrets.ps1",
-        "setup_secrets_utilities": ".cylon/utilities/setup_secrets.py",
-        "setup_configurations": ".cylon/setup_configurations.ps1",
-        "setup_configurations_utilities": ".cylon/utilities/setup_configurations.py",
-        "setup_selected_environment": ".cylon/setup_selected_environment.ps1",
-        "setup_selected_environment_utilities": ".cylon/utilities/setup_selected_environment.py",
-        "iscc": "C:/Program Files (x86)/Inno Setup 6/ISCC.exe",
-
-        "COMPRESSION": ".cylon/compress.ps1",
-        "COMPRESSION_utilitie": ".cylon/utilities/tar_compression.py",
-        "RELEASE": ".cylon/release.ps1",
-        "DEPLOY": ".cylon/deploy_console.ps1",
-        "DEPLOY_CONSOLE": ".cylon/deploy_console.ps1",
-        "DEPLOY_GUI": ".cylon/deploy_gui.ps1",
-        "DEPLOYMENT_FIX": ".cylon/setup_pre_installment.ps1",
-        "INSTALLMENT": ".cylon/setup_installment.ps1"
+    "application": {
+        "name": "Project",
+        "version": "1.0.1",
+        "description": "A Testing Deployment From A Custom Cython Development Environment",
+        "company": "Company",
+        "url": "https://google.com",
+        "icon_path": "assets/icon.ico",
+        "license_path": "LICENSE.txt"
+    },
+    "environment": {
+        "selected_key": "SelectedEnvironment",
+        "base_data_sub_key": "Data",
+        "base_key": "Software"
     },
     "testing": {
         "input_path": "tests",
@@ -39,7 +24,7 @@
         "binding_input_paths": ["c", "cpp"],
         "binding_miscellaneous_input_paths": ["setup"],
         "input_paths": ["bindings", "sources"],
-        "included_imports": ["os", "winreg", "json"],
+        "included_imports": [],
         "extra_compile_args_set_1": [
             "/O2",             
             "/GL",             
@@ -61,38 +46,54 @@
     },
     "compilation": {
         "tool": "nuitka",
-        "application_platform": "console",
-        "output_path": ".releases",
         "entry_path": "app",
+        "output_path": ".releases",
         "input_paths": ["assets", "configurations"],
+        "input_file_paths": ["LICENSE.txt"],
         "include_packages": ["sources", "bindings"],
         "source_path": "sources",
-        "windows_uac_admin": 0,
+        "request_for_windows_uac_admin_permissions": 0,
         "compilation_report_path": ".logs/compilation-report.xml",
-        "excluded_imports": ["setuptools", "pkg_resources", "libcrypto"]
-    },
-    "deployment": {
-        "installment_template_path": ".cylon/configurations/installment.iss",
-        "license_path": "LICENSE.txt",
-        "windows_architecture": "x64"
-    },
-    "environment": {
-        "selected_key": "SelectedEnvironment",
-        "base_data_sub_key": "Data",
-        "base_key": "Software"
+        "excluded_imports": ["setuptools", "pkg_resources", "libcrypto"],
+        "platform": "console"
     },
     "compression": {
-        "type": "tar.xz"
+        "type": "tar.xz",
+        "level": 9
+    },
+    "release": {
+        "installment_template_path": ".cylon/configurations/inno_setup.iss",
+        "windows_architecture": "x64"
     },
     "cylon": {
         "path": ".cylon"
     },
-    "application": {
-        "name": "Project",
-        "version": "1.0.1",
-        "description": "A Testing Deployment From A Custom Cython Development Environment",
-        "company": "Company",
-        "icon_path": "assets/icon.ico",
-        "url": "https://google.com"
-    }
+    "scripts": {
+        "setup_cython_build": ".cylon/utilities/setup_cython_build.py",
+        "setup_cython_bindings": ".cylon/setup_cython_bindings.ps1",
+        "setup_cython_bindings_utility": ".cylon/utilities/setup_cython_bindings.py",
+        "build": ".cylon/build.ps1",
+        "test": ".cylon/test.ps1",
+        "compile": ".cylon/compile.ps1",
+        "post_compile": ".cylon/post_compile.ps1",
+        "release": ".cylon/release.ps1",
+        "compress": ".cylon/compress.ps1",
+        "show_package_sizes": ".cylon/show_package_sizes.ps1",
+        "show_package_sizes_utilities": ".cylon/utilities/show_package_sizes.py",
+        "show_secrets": ".cylon/show_secrets.ps1",
+        "show_secrets_utilities": ".cylon/utilities/show_secrets.py",
+        "show_selected_environment": ".cylon/show_selected_environment.ps1",
+        "show_selected_environment_utilities": ".cylon/utilities/show_selected_environment.py",
+        "setup_secrets": ".cylon/setup_secrets.ps1",
+        "setup_secrets_utilities": ".cylon/utilities/setup_secrets.py",
+        "setup_configurations": ".cylon/setup_configurations.ps1",
+        "setup_configurations_utilities": ".cylon/utilities/setup_configurations.py",
+        "setup_tar_compression": ".cylon/setup_tar_compression.ps1",
+        "setup_tar_compression_utilities": ".cylon/utilities/setup_tar_compression.py",
+        "setup_selected_environment": ".cylon/setup_selected_environment.ps1",
+        "setup_selected_environment_utilities": ".cylon/utilities/setup_selected_environment.py",
+        "setup_installment": ".cylon/setup_installment.ps1",
+        "iscc": "C:/Program Files (x86)/Inno Setup 6/ISCC.exe"
+
+    }  
 }

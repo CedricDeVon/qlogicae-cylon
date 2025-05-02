@@ -184,3 +184,4 @@ build
 legacy/
 
 .cylon/configurations/private.json
+notes.txt

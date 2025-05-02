@@ -4,7 +4,9 @@
         "version": "1.0.1",
         "description": "A Testing Deployment From A Custom Cython Development Environment",
         "company": "Company",
-        "url": "https://google.com"
+        "url": "https://google.com",
+        "icon_path": "assets/icon.ico",
+        "license_path": "LICENSE.txt"
     },
     "environment": {
         "selected_key": "SelectedEnvironment",

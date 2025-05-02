@@ -1,8 +1,12 @@
 $public_configurations = Get-Content .cylon/configurations/public.json -Raw | ConvertFrom-Json
 
 
+Write-Host "- Secrets Setup Pipeline Begins" -ForegroundColor Green
+
 python $public_configurations.scripts.setup_secrets_utilities --selectedEnvironment=$($args[1])
 if ($LASTEXITCODE) {
-    Pause
+    Write-Host "- Secrets Setup Pipeline Phase 1 Failed" -ForegroundColor Red
     exit $LASTEXITCODE
 }
+
+Write-Host "- Secrets Setup Pipeline Complete" -ForegroundColor Green
