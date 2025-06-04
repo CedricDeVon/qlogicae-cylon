@@ -32,7 +32,7 @@ def main():
     for key, value in globals.private_configurations['windows_registry'][selected_environment].items():
         if globals.private_configurations['windows_registry']['is_root_key_used'][key]:
             secrets[key] = value
-        
+    
     for key_name, value in secrets.items():
         try:
             key = winreg.CreateKeyEx(globals.root_keys[key_name]['value'], f"{globals.base_sub_key_path}\{selected_environment}", 0, winreg.KEY_SET_VALUE)
