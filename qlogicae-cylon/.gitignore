@@ -186,7 +186,7 @@ legacy/
 .cylon/configurations/private.json
 notes.txt
 
-tmp/**/*
-.tmp/**/*
-temporary/**/*
-.temporary/**/*
+tmp/
+.tmp/
+temporary/
+.temporary/
