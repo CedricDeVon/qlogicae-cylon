@@ -19,7 +19,7 @@
 <h3>Description</h3>
 
 <p>
-    The designated initial public deployment of <strong>QLogicae Cylon</strong>.
+    The designated initial public deployment.
 </p>
 <p>
 
