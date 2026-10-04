@@ -17,7 +17,7 @@
   </p>
 <div style="margin: 32px 64px;">
 
-![Project - Version](https://img.shields.io/badge/Version-v0.0.1-blue)
+![Project - Version](https://img.shields.io/badge/Version-v1.0.1-blue)
 [![Python - Versions](https://img.shields.io/badge/Python-3.12|%933.13|%933.14-blue?logo=python&logoColor=gold)](https://www.python.org/)
 ![License - MIT](https://img.shields.io/badge/License-MIT-red)
 

@@ -1,6 +1,6 @@
 [project]
 name = "qlogicae-cylon"
-version = "0.0.1"
+version = "1.0.1"
 description = "The cython integration tool for QLogicae projects"
 readme = { file = "README.md", content-type = "text/markdown" }
 requires-python = ">=3.12"
