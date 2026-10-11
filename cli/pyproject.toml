@@ -1,7 +1,7 @@
 [project]
-name = "qlogicae-cylon"
-version = "1.0.1"
-description = "The cython integration tool for QLogicae projects"
+name = "${{ qlogicae-cylon-base-brand-name }}"
+version = "${{ qlogicae-cylon-current-version-number }}"
+description = "${{ qlogicae-cylon-base-description }}"
 readme = { file = "README.md", content-type = "text/markdown" }
 requires-python = ">=3.12"
 license = "MIT"
@@ -11,7 +11,7 @@ license-files = [
 dependencies = []
 keywords = [
     "qlogicae",
-    "cylon"
+    "${{ qlogicae-cylon-base-project-name }}"
 ]
 classifiers = [
     "Typing :: Typed",
@@ -59,15 +59,15 @@ dev = [
 ]
 
 [project.scripts]
-qlogicae-cylon = "qlogicae_cylon.v1.console.app:main"
+qlogicae-cylon = "${{ qlogicae-cylon-source-brand-name }}.v1.console.app:main"
 
 
 [project.urls]
-Homepage = "https://github.com/CedricDeVon/qlogicae-cylon"
-Repository = "https://github.com/CedricDeVon/qlogicae-cylon"
-Documentation = "https://github.com/CedricDeVon/qlogicae-cylon"
-Issues = "https://github.com/CedricDeVon/qlogicae-cylon/issues"
-Changelog = "https://github.com/CedricDeVon/qlogicae-cylon/releases"
+Homepage = "${{ qlogicae-cylon-base-repository-link }}"
+Repository = "${{ qlogicae-cylon-base-repository-link }}"
+Documentation = "${{ qlogicae-cylon-base-repository-link }}"
+Issues = "${{ qlogicae-cylon-base-repository-link }}/issues"
+Changelog = "${{ qlogicae-cylon-base-repository-link }}/releases"
 
 
 [build-system]
@@ -94,8 +94,8 @@ branch = true
 
 [tool.hatch.build]
 include = [
-    "qlogicae_cylon/**/*",
-    "qlogicae_cylon/py.typed",
+    "${{ qlogicae-cylon-source-brand-name }}/**/*",
+    "${{ qlogicae-cylon-source-brand-name }}/py.typed",
 ]
 exclude = [
     "**/__pycache__",
@@ -138,7 +138,7 @@ exclude = [
     ".nox",
     ".idea",
     ".vscode",
-    "qlogicae_cylon/v1/_vendor",
+    "${{ qlogicae-cylon-source-brand-name }}/v1/_vendor",
 ]
 
 
@@ -177,7 +177,7 @@ skip-magic-trailing-comma = false
 
 [tool.mypy]
 files = [
-    "qlogicae_cylon/v1",
+    "${{ qlogicae-cylon-source-brand-name }}/v1",
 ]
 exclude = [
     '(^|/)_vendor(/|$)',
@@ -195,7 +195,7 @@ explicit_package_bases = true
 
 [[tool.mypy.overrides]]
 module = [
-    "qlogicae_cylon.v1._vendor.*",
+    "${{ qlogicae-cylon-source-brand-name }}.v1._vendor.*",
 ]
 ignore_errors = true
 
@@ -205,18 +205,18 @@ exclude = [
     
 ]
 
-# "qlogicae_cylon/v1/_vendor/qlogicae_cor/v2/library/log_format.py",
-# "qlogicae_cylon/v1/_vendor/qlogicae_cor/v2/library/timestamp_manager.py",
+# "${{ qlogicae-cylon-source-brand-name }}/v1/_vendor/qlogicae_cor/v2/library/log_format.py",
+# "${{ qlogicae-cylon-source-brand-name }}/v1/_vendor/qlogicae_cor/v2/library/timestamp_manager.py",
 
 
 [tool.hatch.build.targets.wheel]
 packages = [
-    "qlogicae_cylon"
+    "${{ qlogicae-cylon-source-brand-name }}"
 ]
 
 
 [tool.hatch.build.targets.wheel.force-include]
-"qlogicae_cylon/py.typed" = "qlogicae_cylon/py.typed"
+"${{ qlogicae-cylon-source-brand-name }}/py.typed" = "${{ qlogicae-cylon-source-brand-name }}/py.typed"
 
 
 [tool.hatch.envs.default.scripts]

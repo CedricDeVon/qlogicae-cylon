@@ -5,7 +5,7 @@ DATA: dict[str, dict[str, Any]]= {
         "value": "qlogicae"
     },
     "project-name": {
-        "value": "cylon"
+        "value": "${{ qlogicae-cylon-base-project-name }}"
     },
     "active-major-version-label": {
         "value": "v1"
