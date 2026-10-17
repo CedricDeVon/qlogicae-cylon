@@ -1,0 +1,70 @@
+Metadata-Version: 2.4
+Name: qlogicae-cor
+Version: 2.2.1
+Summary: The core library for QLogicae projects
+Project-URL: Homepage, https://github.com/CedricDeVon/qlogicae-cor
+Project-URL: Repository, https://github.com/CedricDeVon/qlogicae-cor
+Project-URL: Documentation, https://github.com/CedricDeVon/qlogicae-cor
+Project-URL: Issues, https://github.com/CedricDeVon/qlogicae-cor/issues
+Project-URL: Changelog, https://github.com/CedricDeVon/qlogicae-cor/releases
+Author-email: "Vaughn Cedric L. Araneta" <vaughncedriclipardoaraneta@gmail.com>
+Maintainer-email: "Vaughn Cedric L. Araneta" <vaughncedriclipardoaraneta@gmail.com>
+License-Expression: MIT
+License-File: LICENSE
+Keywords: cor,qlogicae
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Programming Language :: Python :: 3.14
+Classifier: Topic :: Software Development
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Typing :: Typed
+Requires-Python: >=3.12
+Requires-Dist: pydantic<3,>=2.13
+Requires-Dist: pyfiglet<2,>=1.0.4
+Requires-Dist: pyyaml<7,>=6.0
+Requires-Dist: qlogicae-cor<3,>=2.0.0
+Requires-Dist: rich<16,>=15
+Requires-Dist: textual<9,>=8
+Requires-Dist: tomli-w<2,>=1.2.0
+Requires-Dist: tomlkit<1,>=0.15.0
+Requires-Dist: typer<1,>=0.26
+Provides-Extra: dev
+Requires-Dist: hatch; extra == 'dev'
+Requires-Dist: memray; extra == 'dev'
+Requires-Dist: mypy; extra == 'dev'
+Requires-Dist: pympler; extra == 'dev'
+Requires-Dist: pytest; extra == 'dev'
+Requires-Dist: pytest-benchmark; extra == 'dev'
+Requires-Dist: pytest-cov; extra == 'dev'
+Requires-Dist: ruff; extra == 'dev'
+Requires-Dist: scalene; extra == 'dev'
+Requires-Dist: twine; extra == 'dev'
+Description-Content-Type: text/markdown
+
+</br>
+
+<div style="width: 100%; display: flex; justify-content: center;">
+    <image alt="the qlogicae logo" src="./project/asset/qlogicae1.png" width="256px">
+</div>
+
+</br>
+
+
+<div style="text-align: center;">
+  <h1>QLogicae Cor</h1>
+  <p style="font-style: italic;">The core library for QLogicae projects</p>
+<div style="margin: 32px 64px;">
+
+![Version](https://img.shields.io/badge/Version-2.2.1-blue)
+![License: MIT](https://img.shields.io/badge/License-MIT-red)
+
+  </div>
+</div>
+
+</br>
