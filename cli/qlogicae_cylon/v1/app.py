@@ -1,18 +1,19 @@
 from __future__ import annotations
 
-from Cython.Build import cythonize
-from library import command_about_manager
-from qlogicae_cor.v2.library import log_manager
+import subprocess
+import sys
 
+from pathlib import Path
 
 def main() -> int:
-    print("Hello World!")
+    result = subprocess.run(
+        [sys.executable, str(Path(__file__).parent.resolve() / "console.py")],
+        check=False,
+    )
 
-    print(cythonize)
-    print(command_about_manager)
-    print(log_manager)
+    exit_code = result.returncode
 
-    return 0
+    return exit_code
 
 
 if __name__ == "__main__":

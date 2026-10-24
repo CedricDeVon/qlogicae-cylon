@@ -219,10 +219,4 @@ packages = [
 "${{ qlogicae-cylon-source-brand-name }}/py.typed" = "${{ qlogicae-cylon-source-brand-name }}/py.typed"
 
 
-
-[tool.vendoring]
-destination = ".tmp/_vendor"
-requirements = "vendor.txt"
-namespace = "qlogicae_cylon.v1._vendor"
-protected-files = ["vendor.txt", "__init__.py"]
-
+[tool.hatch.envs.default.scripts]
