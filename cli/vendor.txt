@@ -1,2 +1,0 @@
-qlogicae-cor==2.2.1
-rich==15.0.0

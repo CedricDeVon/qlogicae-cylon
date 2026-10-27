@@ -10,7 +10,7 @@ from setuptools import Extension, setup
 
 PROJECT_ROOT = Path.cwd()
 BINDINGS_ROOT = PROJECT_ROOT / "bindings"
-PROJECT_SOURCE_ROOT = PROJECT_ROOT / "source"
+PROJECT_SOURCE_ROOT = PROJECT_ROOT / "src"
 
 BINDING_TARGETS = ("c", "cpp")
 MISCELLANEOUS_TARGETS = ("setup",)
@@ -101,7 +101,7 @@ def _find_binding_files(
 
 
 def _find_project_source_files(
-    base_target_source_folder: str = "source",
+    base_target_source_folder: str = "src",
 ) -> list[Extension]:
     source_root = PROJECT_ROOT / base_target_source_folder
 
