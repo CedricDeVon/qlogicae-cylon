@@ -188,5 +188,7 @@ notes.txt
 
 tmp/
 .tmp/
+temp/
+.temp/
 temporary/
 .temporary/
